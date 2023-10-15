@@ -1,6 +1,6 @@
 class Solution:
     def increasingTriplet(self, nums: List[int]) -> bool:
-        first, second = inf, inf
+        first, second = float('inf'), float('inf')
         for third in nums:
             if second < third:
                 return True
