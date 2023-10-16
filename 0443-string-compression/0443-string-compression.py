@@ -11,8 +11,11 @@ class Solution:
             #  check if the current character is the same as the previous character
             if chars[i] == chars[i - 1]:
                 count+=1
+            # if they are not the same
             else:
+                #  write the previous character to the chars list at the current write position
                 chars[write] = chars[i-1]
+                # move to the next position
                 write +=1
                 if count > 1:
                     for dig in str(count):
