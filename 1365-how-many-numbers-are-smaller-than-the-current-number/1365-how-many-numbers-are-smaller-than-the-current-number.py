@@ -1,15 +1,13 @@
 class Solution(object):
     def smallerNumbersThanCurrent(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
+        # 1. Create a sorted copy of the array
+        sorted_nums = sorted(nums)
         
-        result = []
-        for i in range(len(nums)):
-            count = 0
-            for j in range(len(nums)):
-                if nums[i] > nums[j]:
-                    count +=1
-            result.append(count)
-        return result
+        # 2. Map each number to its first index in the sorted array
+        mapping = {}
+        for i, num in enumerate(sorted_nums):
+            if num not in mapping:
+                mapping[num] = i
+                
+        # 3. Build the result using the dictionary
+        return [mapping[num] for num in nums]
