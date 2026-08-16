@@ -4,6 +4,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
+        
         result = []
         for i in range(len(nums)):
             count = 0
