@@ -4,17 +4,14 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        # if found zero save the old  max in variable, and ask if it's higher that the old one or not
+        max_count = 0
+        current_count = 0
 
-        max = 0
-        count = 0
-        for i in nums:
-            if i == 1:
-                count+=1
-                if count > max:
-                    max = count
+        for num in nums:
+            if num == 1:
+                current_count += 1
+                max_count = max(max_count, current_count)
             else:
-                if max < count:
-                    max = count
-                count = 0
-        return max
+                current_count = 0
+
+        return max_count
